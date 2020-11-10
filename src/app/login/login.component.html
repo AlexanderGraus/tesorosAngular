@@ -1,0 +1,11 @@
+<form [formGroup]="myForm" (ngSubmit)="login()">
+    <div>
+        <input type="text" placeholder="Usuario" formControlName="user">
+    </div>
+    <div>
+        <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    <div>
+        <input type="submit" value="Iniciar sesion" [disabled]="myForm.invalid">
+    </div>
+</form>
