@@ -11,6 +11,7 @@ import { CitasComponent } from './citas/citas.component';
 import { CitaComponent } from './cita/cita.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegistroComponent } from './registro/registro.component';
     CitasComponent,
     CitaComponent,
     ContactoComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
