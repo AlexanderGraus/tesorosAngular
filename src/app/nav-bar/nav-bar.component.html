@@ -1,40 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light menu">
-    <a class="navbar-brand" href="#"><i class="fas fa-book-open"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-           <a class="nav-link opcion" href="/">Inicio<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link opcion" href="/citas/">Citas literarias</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link opcion" routerLink ="/contacto">Contacto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link opcion" href="/foros/">Foros</a>
-        </li>
-      </ul>
+<nav>
+  <button mat-button routerLink= '/'>Inicio</button>
+  <button mat-button routerLink= '/login'>Login</button>
+  <button mat-button routerLink= '/registro'>Registro</button>
+  <button mat-button routerLink= '/contacto'>Contacto</button>
 
-      <div class="nav-item"><span>estas logueado</span></div>
-
-      <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle opcion" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Identificarme
-        </a>
-        <div class="dropdown-menu menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item opcion" href="/login/">Iniciar Sesion</a>
-          <a class="dropdown-item opcion" href="/registro/">Registrarme</a>
-          {{!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> --}}
-        </div>
-      </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
 </nav>
