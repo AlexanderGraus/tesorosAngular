@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { HomeComponent } from './Pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     CitaComponent,
     ContactoComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
