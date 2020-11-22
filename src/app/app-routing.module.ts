@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CitaComponent } from './cita/cita.component';
-import { CitasComponent } from './citas/citas.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { CitaComponent } from './Components/cita/cita.component';
+import { CitasComponent } from './Components/citas/citas.component';
+import { ContactoComponent } from './Pages/contacto/contacto.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { RegistroComponent } from './Pages/registro/registro.component';
 
 const routes: Routes = [
   {path:"",component:CitasComponent},
