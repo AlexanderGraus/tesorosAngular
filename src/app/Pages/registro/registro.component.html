@@ -1,0 +1,36 @@
+<form [formGroup]="myForm" (ngSubmit)="registro()">
+    <div>
+        <label for="">Nombre de usuario</label>
+        <input type="text" formControlName="user">
+    </div>
+    <div *ngIf="myForm.get('user').errors && myForm.get('user').dirty">
+        <p *ngIf="myForm.get('user').hasError('required')">El campo es obligatorio</p>
+        
+    </div>
+    <div>
+        <label for="">Nombre</label>
+        <input type="text" formControlName="nombre">
+    </div>
+    <div *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
+        <p *ngIf="myForm.get('nombre').hasError('required')">El campo es obligatorio</p>
+        
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="email" formControlName="mail" [ngClass]="{error:myForm.get('mail').errors && myForm.get('mail').dirty}">
+    </div>
+    <div *ngIf="myForm.get('mail').errors && myForm.get('mail').dirty">
+        <p *ngIf="myForm.get('mail').hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('mail').hasError('minlength')">Debe escribir al menos 3 caracteres</p>
+        
+    </div>
+    <div>
+        <label for="">Contraseña</label>
+        <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+        <p *ngIf="myForm.get('password').hasError('required')">El campo es obligatorio</p>
+        
+    </div>
+    <input type="submit" value="Registrarse" [disabled]="myForm.invalid">
+</form>
