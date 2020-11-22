@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import { CitasService } from '../services/citas.service';
-import {Cita, CitasPaginate} from '../interfaces/Citas';
+import { CitasService } from '../../services/citas.service';
+import {Cita, CitasPaginate} from '../../interfaces/Citas';
 
 @Component({
   selector: 'app-citas',
