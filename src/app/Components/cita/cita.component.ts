@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { Cita } from 'src/app/interfaces/Citas';
 
 @Component({
   selector: 'app-cita',
@@ -6,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cita.component.css']
 })
 export class CitaComponent implements OnInit {
-  cita = {
-    id:1,
-    autor: "Nicole Graus",
-    libro: "",
-    cita: "O sos careta o sos antisocial, vos elegís"
-  };
-  constructor() { }
+
+  @Input()
+  cita:Cita;
+  constructor() {}
 
   ngOnInit(): void {
   }
