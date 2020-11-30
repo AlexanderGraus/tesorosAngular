@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cita, CitasPaginate } from 'src/app/interfaces/Citas';
+import { CitasService } from 'src/app/services/citas.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  citas:Cita[]=[];
+  loading:boolean = true;
+  constructor(private citaSrv:CitasService) {
+    this.getCitas();
+   }
+
+  getCitas(){
+    this.citaSrv.getAll().subscribe((data:CitasPaginate)=>{
+      this.citas = data.docs;
+      this.loading = false;
+    },
+    error =>{
+      console.log('Error',error);
+    
+    })
+  }
 
   ngOnInit(): void {
   }

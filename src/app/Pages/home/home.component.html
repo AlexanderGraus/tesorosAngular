@@ -1,1 +1,9 @@
-<p>home works!</p>
+<h1>Citas literarias ingresadas</h1>
+<div *ngIf="!loading">
+    <div  *ngFor="let c of citas">
+        <app-cita
+            [cita]="c"
+        ></app-cita>
+    </div>
+</div>
+<div *ngIf="loading">Loading ...</div>
