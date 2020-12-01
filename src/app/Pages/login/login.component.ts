@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         console.log('Usuario registrado:');
         if(data.token){
           alert('usuario logueado');
-          localStorage.setItem('token',data.token);
+          this.userServ.authenticate(data.token);
           this.router.navigateByUrl('/');
         }else{
           alert(data.message);
