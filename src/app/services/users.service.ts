@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -8,6 +9,7 @@ import {environment} from "../../environments/environment";
 export class UsersService {
 
   routes:string = 'users/';
+  authenticationState = new BehaviorSubject((localStorage.getItem("token")?true:false));
   constructor(private http:HttpClient) { }
 
   create(user){
@@ -15,5 +17,21 @@ export class UsersService {
   }
   login(user){
     return this.http.post(environment.endPointApi+this.routes+'login',user);
+  }
+  logout(){
+    localStorage.removeItem('token');
+    this.authenticationState.next(false);
+  }
+
+  authenticate(token:string){
+    localStorage.setItem('token',token);
+    this.authenticationState.next(true);
+  }
+  isAuthenticate(){
+    return this.authenticationState;
+  }
+
+  isAuthenticated(){
+    return this.authenticationState.value;
   }
 }
