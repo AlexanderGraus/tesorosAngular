@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  isLogin:boolean=false;
+  constructor(private usrServ:UsersService) {
+    usrServ.isAuthenticate().subscribe(login=>{
+      console.log('login',login);
+      this.isLogin = login;
+    });
+   }
 
   ngOnInit(): void {
   }
