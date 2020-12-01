@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         }
       },
       error =>{
-        console.log(`Usuario registrado: ${error}`);
+        console.log(`Error: ${error}`);
         alert('Error en el registro');
       }
     );
