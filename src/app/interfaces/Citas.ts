@@ -1,5 +1,5 @@
 export interface Cita{
-    _id:string;
+    _id?:string;
     user: string;
     autor:string;
     libro?:string;

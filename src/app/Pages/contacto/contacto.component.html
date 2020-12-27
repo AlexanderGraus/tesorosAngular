@@ -1,41 +1,22 @@
-<section class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4 mb-3">Contacto</h1>
-        <p class="lead">Puede contactarse con nosotros a <a href="mailto:tesorosimpresos123@gmail.com">tesorosimpresos123@gmail.com</a> o llenando el siguiente formulario:</p>
+<form [formGroup]="formContacto" (ngSubmit)="mandar()">
+    <div >
+    <div class="item">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email"  >
+        <span style="color: red;" *ngIf="formContacto.get('email').hasError('email')">
+            Ingrese un mail valido</span>
     </div>
-</section>
-
-<!-- formulario -->
-<section class="container">
-    <div class="row">
-        <div class="col-xl-6">
-            <form [formGroup]="formContacto" action="/contacto">
-                <div class="form-group">
-                    <label for="mail">Email:</label>
-                    <input class="form-control" [ngClass]="{error:formContacto.get('email').errors && formContacto.get('email').dirty}" formControlName="email" type="email" name="mail" id="mail" autofocus placeholder="Email">
-                    <div *ngIf="formContacto.get('email').errors && formContacto.get('email').dirty">
-                        <span *ngIf="formContacto.get('email').hasError('email')"> Ingrese un mail valido</span>
-                    </div>
-                    
-                
-                </div>
-
-                <div class="form-group">
-                    <label for="asunto">Asunto:</label>
-                    <input class="form-control" formControlName="asunto" type="text" name="asunto" id="asunto" placeholder="Asunto">
-                </div>
-
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea class="form-control" [ngClass]="{error:formContacto.get('mensaje').errors && formContacto.get('mensaje').dirty}" formControlName="mensaje" name="mensaje" id="mensaje" rows="5"></textarea>
-                </div>
-                <h5 class="text-success text-center">message</h5>
-                <button class="btn btn-success" type="submit">Enviar</button>
-                <button class="btn btn-warning ml-2" type="reset">Borrar</button>
-            </form>
-        </div>
-        <div class="col">
-            <img width="400" height="240" src="https://lapiedradesisifo.com/wp-content/uploads/2019/04/800px-Libro_de_los_Ep%C3%ADtomes.jpg" alt="imagen de un libro"/>
-        </div>
+    <div class="item">
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" formControlName="asunto">
     </div>
-</section>
+    <div class="item">
+        <label for="mensaje">Mensaje:</label>
+        <br>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="10" formControlName="mensaje"></textarea>
+    </div>
+    <div class="item">
+        <button mat-raised-button type="submit" color="primary" [disabled]="formContacto.invalid || boton">Enviar</button>
+    </div>
+</div>
+</form>

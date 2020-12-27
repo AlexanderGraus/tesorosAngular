@@ -1,4 +1,5 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, Output} from '@angular/core';
+import { EventEmitter } from 'events';
 import { Cita } from 'src/app/interfaces/Citas';
 
 @Component({
@@ -10,7 +11,12 @@ export class CitaComponent implements OnInit {
 
   @Input()
   cita:Cita;
+  @Output()
+  reload = new EventEmitter();
   constructor() {}
+  eliminar(){
+  
+  }
 
   ngOnInit(): void {
   }

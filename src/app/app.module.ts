@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
@@ -18,6 +18,12 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './Pages/home/home.component';
+import { AdminComponent } from './Pages/admin/admin.component';
+import { InterceptorsService } from './interceptors.service';
+import { AltaComponent } from './Pages/admin/alta/alta.component';
+import { ModifComponent } from './Pages/admin/modif/modif.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +35,12 @@ import { HomeComponent } from './Pages/home/home.component';
     ContactoComponent,
     RegistroComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
+    AltaComponent,
+    ModifComponent,
+
+   
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,9 @@ import { HomeComponent } from './Pages/home/home.component';
     BrowserAnimationsModule,
     MatMenuModule,MatButtonModule,MatInputModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorsService,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

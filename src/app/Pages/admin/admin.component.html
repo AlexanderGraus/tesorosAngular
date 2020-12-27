@@ -1,0 +1,15 @@
+<button routerLink= '/admin/alta'>agregar cita</button>
+<div>
+    <h1>Tus citas:</h1>
+
+</div>
+<div *ngIf="!loading" class="container">
+    <div  *ngFor="let c of citas">
+        <app-cita
+            [cita]="c"
+        ></app-cita>
+        <button (click)='eliminar(c)'>Eliminar</button> <button routerLink= '/admin/modif/{{c._id}}'>Editar</button>
+    </div>
+    
+</div>
+<div *ngIf="loading">Loading ...</div>

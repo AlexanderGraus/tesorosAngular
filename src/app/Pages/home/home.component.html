@@ -1,9 +1,20 @@
 <h1>Citas literarias ingresadas</h1>
-<div *ngIf="!loading">
-    <div  *ngFor="let c of citas">
-        <app-cita
-            [cita]="c"
-        ></app-cita>
+<input placeholder="buscar" [(ngModel)]="busqueda" (ngModelChange)="buscar()" />
+<br />
+<br />
+<button *ngIf="isLogin" mat-button routerLink="/admin/alta">
+  subir una cita
+</button>
+<span *ngIf="!isLogin"
+  ><a routerLink="/login">inicie sesion</a> para subir citas</span
+>
+<div *ngIf="!loading" class="container">
+  <div *ngFor="let c of citas">
+    <app-cita [cita]="c"></app-cita>
+    <div *ngIf="c.user == id && isLogin" style="margin-bottom: 30px;">
+      <button (click)="eliminar(c)">Eliminar</button>
+      <button routerLink="/admin/modif/{{ c._id }}">Editar</button>
     </div>
+  </div>
 </div>
 <div *ngIf="loading">Loading ...</div>

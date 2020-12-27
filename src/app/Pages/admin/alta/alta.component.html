@@ -1,0 +1,20 @@
+<form [formGroup]="myForm" (ngSubmit)="subir()">
+    <div >
+    <div class="item">
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" formControlName="autor">
+    </div>
+    <div class="item">
+        <label for="libro">Libro:</label>
+        <input type="text" id="libro" formControlName="libro">
+    </div>
+    <div class="item">
+        <label for="autor">Cita:</label>
+        <br>
+        <textarea name="cita" id="cita" cols="30" rows="10" formControlName="cita"></textarea>
+    </div>
+    <div class="item">
+        <button mat-raised-button type="submit" color="primary" [disabled]="myForm.invalid">Subir</button>
+    </div>
+</div>
+</form>
