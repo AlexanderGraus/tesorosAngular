@@ -1,7 +1,18 @@
-# Tesoros Impresos Back End en Angular
+# Tesoros Impresos Front End en Angular
 
-Back End de la pagina Tesoros Impresos.
+Front End de la pagina Tesoros Impresos.
 
-Maneja las citas y el manejo de las distintas paginas.
+Entra [aqui](https://tesoros-impresos.herokuapp.com/) para visitar el sitio
 
-Actualmente en desarrollo.
+Permite listar, editar y borrar las citas literarias
+
+## conceptos utilizados
+- Modulos
+- componentes
+- servicios
+- interceptors
+- routeo
+- guards
+
+### proximas actualizaciones
+- agregar un paginador
